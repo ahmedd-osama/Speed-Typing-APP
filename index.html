@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <title>Speed Writing</title>
+</head>
+<body>
+    <main>
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+        <div class="landing">
+            <i class="fa-solid fa-keyboard logo"></i>
+            <h1 class="hacker-text landing-h1" data-text="Welcome to Speed Writing App">Welcome to Speed Writing App<h1>
+            <h2 class="hacker-text landing-h2" data-text="Improve your Writing speed right away!"></h2>
+             <button class="try-btn" onclick="window.scrollTo(0, document.querySelector('.app').getBoundingClientRect()['y'])">Start Now</button>
+        </div>
+        <div class="app">
+            <div class="container">
+                <div class="settings">
+                <div class="mood">
+                    <h3>Mood:    </h3>
+                      <div class="dropdown">
+                        <button onclick="dropdown(this)" data-dropID = "mood" class="dropbtn" id="dropbtn">
+                          <div id="mood-dropbtnText">
+                            30 Seconds
+                          </div>
+                          <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div id="mood-dropdown" class="dropdown-content">
+                          <a onclick="dropdownOption(this, '30 Sec')" data-dropID = "mood" data-value = "30">30 Seconds</a>
+                          <a onclick="dropdownOption(this, '60 Sec')" data-dropID = "mood" data-value = "60">60 Seconds</a>
+                          <a onclick="dropdownOption(this, '2 Min')" data-dropID = "mood" data-value = "120">2 Minutes</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="difficulty">
+                    <h3>Difficulty:    </h3>
+                    <div class="dropdown difficulty-dropdown">
+                        <button onclick="dropdown(this)" data-dropID = "difficulty" class="dropbtn" id="dropbtn">
+                          <div id="difficulty-dropbtnText">Normal</div>
+                          <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div id="difficulty-dropdown" class="dropdown-content">
+                          <a onclick="dropdownOption(this, 'Easy')" data-dropID="difficulty" data-value = "easy">Easy</a>
+                          <a onclick="dropdownOption(this, 'Normal')" data-dropID="difficulty"data-value = "normal">Normal</a>
+                          <a onclick="dropdownOption(this, 'Hard')" data-dropID="difficulty" data-value = "hard">Hard</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="test-container">
+                <div class="background" id="background">  
+                    <div class="background-text" id="background-text"></div>
+                    <textarea type="text" class="input" id="input" oninput="onInput()"></textarea>
+                    <div class="overlay">
+                        <div class="results">
+                            
+                            <div class="speed">
+                                <span id="speed-result">100</span>
+                                <span class="unite">WPM</span>
+                            </div>
+                            <div class="accuracy">
+                                <span id="accuracy-result">100%</span>
+                                <span class="unite">ACCURACY</span>
+                            </div>
+                            <div class="highscore">
+                                <span id="highscore-result">50</span>
+                                <span class="unite">HIGHSCORE</span>
+                            </div>
+                        </div>
+                        <button id="start-btn"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="timer-container">
+                <svg class="progress-container" width="300px" height="210px">
+                    <g>
+                      <circle class="time-progress" id="timer" cx="150" cy="100" r="50px" />
+                      <text id="timer-text"  x="150" y="112" > 30 </text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+            
+        </div>
+    </main>
+    <footer>
+        <div class="attribution">
+          Codeded by <a href="https://github.com/ahmedd-osama/">Ahmed Osama</a>.
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

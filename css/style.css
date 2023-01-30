@@ -408,15 +408,12 @@ h1, h2, h3, h4, h5, h6, p{
 
 /* footer */
 footer{
-    z-index: 100;
+    display: flex;
+    justify-content: center;
     font-size: 1.5rem;
     color: wheat;
-    position: absolute;
-    width: 90%;
-    bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
-}
+    position: relative;
+    margin-top: -70px;}
 .attribution{
     text-align: center;
 }
